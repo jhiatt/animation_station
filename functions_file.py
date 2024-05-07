@@ -51,26 +51,11 @@ class Static(Asset):
       
 
         
-class Man:
+class Man(Asset):
 
     def __init__(self,pos,connections=None):
-      self.pos = pos
-      if connections == None:
-         connections = []
-      self.connections = connections
+      super().__init__(pos, connections)
 
-    def move(self,string,spaces):
-       new_pos = self.pos + spaces
-       
-       
-       for i in self.connections:
-          string = string[:i] + ' ' + string[i + 1:]
-
-       self.connections = []
-
-       self.pos = new_pos
-
-       return(string)
 
     def walk1(self,string): # move position to the self object
 
