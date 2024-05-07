@@ -2,10 +2,10 @@ from functions_file import *
 
 grid = []
 
-for i in range(2, h-7, 1):
+for i in range(1, h-4, 1):
   down = i*w
-  left = down + 2
-  right = down + w-1
+  left = down + i + 1
+  right = down + w + i - 1
   
 
   # l = [x for x in range(left, right, 1)]
@@ -74,17 +74,11 @@ def animate():
 
     sleep(sleep_inc)
 
-  for x in grid:
-    screen = screen[:i] + '.' + screen[i + 1:]
-  print('!!!')
-  print(screen)
+  # for i in grid:
+  #   screen = screen[:i] + '.' + screen[i + 1:]
 
-  # print(st[5].flow(screen))
+  # print(screen)
 
-
-
-  
-  # screen = test(screen)
   
 
 
