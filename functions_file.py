@@ -2,6 +2,7 @@ from time import sleep
 
 w=105 # width
 h = 35 # height
+sleep_inc = .1
 
 
 # def __init__(self) -> None:
