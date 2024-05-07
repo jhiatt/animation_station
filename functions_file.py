@@ -2,6 +2,54 @@ from time import sleep
 
 w=105 # width
 h = 35 # height
+
+
+# def __init__(self) -> None:
+#       pass
+
+
+class Asset:
+  def __init__(self,pos,connections=None):
+      self.pos = pos
+      if connections == None:
+         connections = []
+      self.connections = connections
+
+  def move(self,string,spaces):
+       new_pos = self.pos + spaces
+       
+       
+       for i in self.connections:
+          string = string[:i] + ' ' + string[i + 1:]
+
+       self.connections = []
+
+       self.pos = new_pos
+
+       return(string)
+
+class Static(Asset):
+   def __init__(self,pos,length,connections=None):
+      super().__init__(pos, connections)
+      self.length = length
+   
+   def flow(self,string):
+      # ~~~~~~~~~~~
+      # ͡
+      # ͝
+
+      # only one line
+      pos = self.pos
+      s = string[:pos] + '~'*self.length + string[pos + self.length:]
+
+      for l in range(self.length):
+        self.connections.append(pos + l)
+      
+      return(s)
+
+      
+      
+
         
 class Man:
 
@@ -12,7 +60,6 @@ class Man:
       self.connections = connections
 
     def move(self,string,spaces):
-       pass
        new_pos = self.pos + spaces
        
        
@@ -80,24 +127,6 @@ class Man:
 
           return(s)
         
-    
-    def smlwalk1(self):
-       return(
-"""
-웃
-"""
-       )
-    
-    def smlwalk2(self):
-       return(
-"""
-욱
-"""
-       )
-    
-
-
-
 
 
 

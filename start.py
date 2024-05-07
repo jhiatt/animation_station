@@ -1,7 +1,5 @@
-from animation import an
+from animation import animate
 
 
 
-an()
-# hi = Man()
-# hi.walk1
+animate()
